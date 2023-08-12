@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send("Welcome to Student and Mentor Management Task");
+  res.send("Welcome to Student and Mentor Management");
 });
 
 module.exports = router;
