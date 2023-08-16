@@ -6,6 +6,9 @@ var logger = require('morgan');
 var cors = require('cors');
 
 var indexRouter = require('./routes/index');
+var signupLoginRouter = require('./routes/signupLogin');
+var resetPasswordRouter = require('./routes/resetPassword');
+var emailServiceRouter = require('./routes/emailService');
 var mentorRouter = require('./routes/mentors');
 var studentRouter = require('./routes/students');
 
@@ -23,6 +26,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
 app.use('/', indexRouter);
+app.use('/signupLogin', signupLoginRouter);
+app.use('/reset-password', resetPasswordRouter);
+app.use('/send-password-reset-email', emailServiceRouter);
 app.use('/mentors', mentorRouter);
 app.use('/students', studentRouter);
 
