@@ -31,6 +31,7 @@ const verifyToken = (token) => {
         return decoded; // Returning the decoded token (payload)
     } catch (error) {
         return null; // Token is invalid or expired
+        console.log(error);
     }
 };
 

@@ -15,7 +15,7 @@ const sendPasswordResetEmail = async (user_mail, resetToken) => {
     });
 
     // Constructing the reset link
-    const resetLink = `https://reset-password-iwly.onrender.com/reset-password/${resetToken}`; // Front end app's URL
+    const resetLink = `https://willowy-parfait-4634b8.netlify.app/reset-password/routing/${resetToken}`;
 
     // Email content
     const mailOptions = {

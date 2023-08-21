@@ -3,7 +3,8 @@ const { hashPassword, verifyToken } = require('../Config/auth'); // Importing ha
 
 // Function to handle the reset password page rendering
 const resetPasswordPage = (req, res) => {
-  const token = req.query.token; // Get the token from the query parameter
+  console.log("entered resetPasswordPage line 6");
+  const token = req.params.token; // Get the token from the query parameter
   if (!token) {
     return res.status(400).send({ message: 'Token is missing' }); // Token missing error
   }
@@ -14,8 +15,13 @@ const resetPasswordPage = (req, res) => {
     return res.status(400).send({ message: 'Invalid or expired token' }); // Invalid or expired token error
   }
 
+  res.status(200).send({
+    message: "Token is Valid",
+    token: token
+  })
   // Token is valid, render the password reset page
-  res.render('reset-password', { token }); // Render the password reset page with token
+  // res.render('reset-password', { token }); // Render the password reset page with token
+
 };
 
 // Function to handle password reset
